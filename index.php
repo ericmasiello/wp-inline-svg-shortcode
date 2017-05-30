@@ -13,9 +13,9 @@ Credit:
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
-function inline_svg_fn( $atts, $content = NULL ) {
-  extract( shortcode_atts( array( 'id' => '', 'class' => '', 'title' => '' ), $atts ) );
-  $output = '<svg class="' . $class . '"><title>' . $title . '</title><use xlink:href="#' . $id . '" /></svg>';
+function inline_svg_fn($atts, $content = NULL) {
+  extract( shortcode_atts( array( 'id' => '', 'class' => '', 'svgTitle' => '', 'title' => ''), $atts ) );
+  $output = $title . '<svg class="' . $class . '"><title>' . $svgTitle . '</title><use xlink:href="#' . $id . '" /></svg>';
   return $output;
 }
 
